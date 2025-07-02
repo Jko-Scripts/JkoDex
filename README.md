@@ -19,6 +19,10 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Jko-Scripts/JkoDex/ma
  - Load Cobalt
  - Load Adonis AC Bypass
 
+ ### Misc
+
+ - Rejoin support
+
 ## Todo
 
 - [ ] Implement themes (already present for some elements)
