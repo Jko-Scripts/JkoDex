@@ -17590,5 +17590,25 @@ Main = (function()
 	return Main
 end)()
 
+function missing(t, f, fallback)
+	if type(f) == t then
+		return f
+	end
+	return fallback or nil
+end
+
+queueteleport =
+	missing("function", queue_on_teleport or (syn and syn.queue_on_teleport) or (fluxus and fluxus.queue_on_teleport))
+
+local TeleportCheck = false
+game.Players.LocalPlayer.OnTeleport:Connect(function(State)
+	if not TeleportCheck and queueteleport then
+		TeleportCheck = true
+		queueteleport(
+			"loadstring(game:HttpGet('https://raw.githubusercontent.com/Jko-Scripts/JkoDex/main/Source.luau'))()"
+		)
+	end
+end)
+
 -- Start
 Main.Init()
